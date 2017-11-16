@@ -34,14 +34,14 @@ class Question {
         const question = Question._All[id-1] // Do Not Edit
         console.log(`...Question ${id} Loaded`) // Do Not Edit
 
-        return question
+        return new Promise(function(resolve){resolve(question)})
       }, 1500)
 
   }
 
   // FIXME: Implement async / await
-  static Print(id){
-    const question = Question.Find(id)
+  static async Print(id){
+    const question = await Question.Find(id)
 
     console.log("\n")
     console.log(question.content)
