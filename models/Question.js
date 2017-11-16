@@ -30,12 +30,13 @@ class Question {
   static Find(id){
     console.log(`Waiting for Question ${id} to load...`)
 
-      setTimeout(function(){
-        const question = Question._All[id-1] // Do Not Edit
-        console.log(`...Question ${id} Loaded`) // Do Not Edit
-
-        return new Promise(function(resolve){resolve(question)})
-      }, 1500)
+      return new Promise(function(resolve){
+        setTimeout(function(){
+          const question = Question._All[id-1] // Do Not Edit
+          console.log(`...Question ${id} Loaded`) // Do Not Edit
+        }, 1500)
+        resolve(question)
+      })
 
   }
 
